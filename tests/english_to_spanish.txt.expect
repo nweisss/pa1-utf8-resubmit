@@ -1,0 +1,8 @@
+Valid ASCII: false
+Uppercased ASCII: "I LOVE TO PLAY SOCCER, Y TAMBIéN DISFRUTO DE BAILAR SALSA."
+Length in bytes: 59
+Number of code points: 58
+Bytes per code point: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+Substring of the first 6 code points: "I love"
+Code points as decimal numbers: 73 32 108 111 118 101 32 116 111 32 112 108 97 121 32 115 111 99 99 101 114 44 32 121 32 116 97 109 98 105 233 110 32 100 105 115 102 114 117 116 111 32 100 101 32 98 97 105 108 97 114 32 115 97 108 115 97 46 
+Animal emojis: 
