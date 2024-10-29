@@ -237,7 +237,7 @@ void next_utf8_char(char str[], int32_t cpi, char result[]){
 
     //add, then convert
     code_point++;
-    printf("%d\n", code_point);
+    //printf("%d\n", code_point);
 
      if (code_point <= 0x7F) {
         result[0] = code_point;
@@ -260,7 +260,7 @@ void next_utf8_char(char str[], int32_t cpi, char result[]){
     } else {
         result[0] = '\0';
     }
-    printf("%s\n", result);
+    //printf("%s\n", result);
 }
 
 
@@ -316,8 +316,15 @@ int main(){
     printf("Animal emojis: ");
     print_animal_emojis(test);
 
-    printf("Codepoint + 1 test: ");
-    char result[5];
-    next_utf8_char(test, 0, result);
+    printf("Next Character of Codepoint at Index 3: ");
+    if(strlen(test) < 4){
+        printf("\n");
+    }
+    else{
+        char result[5];
+        next_utf8_char(test, 3, result);
+        printf("%s\n", result);
+    }
+    
 
 }

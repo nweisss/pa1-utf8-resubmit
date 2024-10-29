@@ -8,3 +8,25 @@ It would be useful to not have the leading 10 because it means that there is mor
 
 
 Design Question 3: Resubmission
+Consider the 3-byte sequence 11100000 10000000 10100001. Answer the following questions:
+
+-What code point does it encode in UTF-8, and what character is that?
+The code point it encodes in UTF-8 is U+0021, which is 33 in decimal. This corresponds to the charachter '!'.
+
+-What are the three other ways to encode that character?
+Three other ways to encode this charachter are:
+1) 11110000 10000000 10000000 10100001
+2) 11000000 10100001
+3) 00100001
+
+-Give an example of a character that has exactly three encodings (but not four, like the one in the previous example does)
+A charachter that has exactly three encodings is 'Ĥ'. 
+'Ĥ' is usually represented with 2 bytes: 11000100 10100100 but it can also be represented with 3 bytes and 4 bytes.
+3 bytes: 11100000 10000100 10100100
+4 bytes: 11110000 10000000 10000100 10100100
+It cannot be represented in one byte, since it has a codepoint of U+0124 which is greater than the largest UTF-8 codepoint that could be represented in one byte which is U+007F.
+
+-What are some problems with having these multiple encodings, especially for ASCII characters? A web search for “overlong UTF-8 encoding” may be useful here.
+
+Problems arise from having multiple encodings when a computer program is designed to expect a certain size encoding for a character, but it is given a different sized encoding instead. For example, if you expect only ASCII characters in an input, a program might assume that there will only be one byte charachters in the input, however those characters could be represented by a multi-byte encoding, and a program may not be built to handle that scenario. This can create security vulnerabilities, because many programs use filters to look for null characters or characters like "/" when looking for filenames or to protect against hackers, but those programs may not check for overlong UTF-8 characters. This can lead to unexpected behavior, possibly giving a hacker unwanted access to files and/or memory.
+
